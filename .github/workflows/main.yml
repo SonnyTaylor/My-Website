@@ -7,7 +7,7 @@ on:
 
 jobs:
   update-website:
-    runs-on: windows-latest  # Specify Windows runner
+    runs-on: windows-latest  
 
     steps:
       - name: Checkout repository
@@ -15,5 +15,5 @@ jobs:
 
       - name: Update website
         run: |
-          cd C:\\xampp\\htdocs
+          cd .
           git pull origin main
