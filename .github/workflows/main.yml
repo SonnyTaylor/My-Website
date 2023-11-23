@@ -1,0 +1,19 @@
+name: Update Website
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-website:
+    runs-on: windows-latest  # Specify Windows runner
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Update website
+        run: |
+          cd C:\\xampp\\htdocs
+          git pull origin main
