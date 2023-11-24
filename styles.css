@@ -21,7 +21,7 @@ p {
 
 .command {
   padding-bottom: 1px;
-  padding-top: 15px;
+  padding-top: 6px;
   border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
   display: inline-block;
 }
