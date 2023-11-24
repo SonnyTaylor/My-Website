@@ -1,0 +1,31 @@
+body {
+  font-family: "hack", monospace;
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+p {
+  margin: 0;
+  padding-left: 5px;
+  line-height: 1.4;
+}
+
+.command::before {
+  content: "[guest@sonnytaylor.uk: ~]$ ";
+  color: #4af626;
+  /* Add a color for the command prompt */
+}
+
+.command {
+  padding-bottom: 1px;
+  padding-top: 6px;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
+  display: inline-block;
+}
+
+.answer {
+  padding-bottom: 20px;
+}
