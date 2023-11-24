@@ -1,39 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Sonny Taylor's Website</title>
-  </head>
 
-  <body>
-    <header>
-      <h1>Hello, I'm Sonny Taylor</h1>
-      <p>I love coding!</p>
-    </header>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Sonny Taylor</title>
+  <meta name="description" content="Your website description" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Link to your custom font -->
+  <link rel="stylesheet" href="/fonts/font.css" />
+  <style>
+    body {
+      font-family: 'hack', monospace;
+      background-color: black;
+      color: white;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        Welcome to my personal website. I'm passionate about coding and enjoy
-        exploring new technologies.
-      </p>
-    </section>
+    p {
+      margin: 0;
+      padding-left: 5px;
+      line-height: 1.4;
+    }
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>Python</li>
-        <!-- Add more skills as needed -->
-      </ul>
-    </section>
+    .command::before {
+      content: "[guest@sonnytaylor.uk: ~]$ ";
+      color: green;
+      /* Add a color for the command prompt */
+    }
 
-    <footer>
-      <p>Contact me at sonny@example.com</p>
-    </footer>
-  </body>
+    .command {
+      padding-bottom: 1px;
+      padding-top: 15px;
+    }
+
+    .answer {
+      padding-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <p class="command" style="padding-top: 5px;">whoami</p>
+  <p class="answer">Sonny Taylor</p>
+
+  <p class="command">cat aboutme.txt</p>
+  <p class="answer">My name is Sonny Taylor. I am a passionate web developer with expertise in various technologies.</p>
+
+  <p class="command">cat Skills.txt</p>
+  <p class="answer">Python, HTML, CSS, JavaScript, Linux</p>
+
+  <p class="command">cat contact_info.txt</p>
+  <p class="answer">Email: sonny@example.com<br>Discord: .salaminipples</p>
+
+
+
+</body>
+
 </html>
