@@ -1,55 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Meta tags for character set, rendering mode, and title -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Sonny Taylor</title>
 
-<head>
-  <!-- Meta tags for character set, rendering mode, and title -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Sonny Taylor</title>
+    <!-- Meta tags for description and viewport settings -->
+    <meta name="description" content="My Terminal Portfolio" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Meta tags for description and viewport settings -->
-  <meta name="description" content="My Terminal Portfolio" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Open Graph Protocol Metadata for social media sharing -->
+    <meta property="og:title" content="Sonny Taylor" />
+    <meta property="og:description" content="My Terminal Portfolio" />
+    <meta property="og:image" content="assets/img/thumbnail.png" />
+    <meta property="og:url" content="sonnytaylor.uk" />
+    <meta property="og:type" content="website" />
 
-  <!-- Open Graph Protocol Metadata for social media sharing -->
-  <meta property="og:title" content="Sonny Taylor" />
-  <meta property="og:description" content="My Terminal Portfolio" />
-  <meta property="og:image" content="assets/img/thumbnail.png" />
-  <meta property="og:url" content="sonnytaylor.uk" />
-  <meta property="og:type" content="website" />
+    <!-- Link to external style sheets and favicon -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/fonts/font.css" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
-  <!-- Link to external style sheets and favicon -->
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="/fonts/font.css" />
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <!-- Defer loading of JavaScript for improved page loading performance -->
+    <script defer type="text/javascript" src="script.js"></script>
+  </head>
 
-  <!-- Defer loading of JavaScript for improved page loading performance -->
-  <script defer type="text/javascript" src="script.js"></script>
-</head>
+  <body>
+    <!-- Command and answer sections -->
+    <p class="command" style="padding-top: 6px">whoami</p>
+    <p class="answer" style="color: rgb(128, 204, 230)">Sonny Taylor</p>
 
+    <p class="command">ls</p>
+    <p class="answer">about_me.txt skills.txt contact_info.txt</p>
 
-<body>
+    <p class="command">cat about_me.txt</p>
+    <p class="answer">
+      My name is <span style="color: rgb(128, 204, 230)">Sonny Taylor</span>. I
+      am a passionate amateur web developer with expertise in various
+      technologies.
+    </p>
 
-  <!-- Command and answer sections -->
-  <p class="command" style="padding-top: 6px;">whoami</p>
-  <p class="answer" style="color: rgb(128, 204, 230);">Sonny Taylor</p>
+    <p class="command">cat skills.txt</p>
+    <p class="answer">Python, HTML, CSS, JavaScript, Tailwind and AWS</p>
 
-  <p class="command">ls</p>
-  <p class="answer">about_me.txt skills.txt contact_info.txt</p>
+    <p class="command">cat contact_info.txt</p>
+    <p class="answer">Email: sonny@example.com<br />Discord: .salaminipples</p>
 
-  <p class="command">cat about_me.txt</p>
-  <p class="answer">My name is <span style="color: rgb(128, 204, 230);">Sonny Taylor</span>. I am a passionate amateur
-    web
-    developer with expertise in various technologies.</p>
-
-  <p class="command">cat skills.txt</p>
-  <p class="answer">Python, HTML, CSS, JavaScript, Linux</p>
-
-  <p class="command">cat contact_info.txt</p>
-  <p class="answer">Email: sonny@example.com<br>Discord: .salaminipples</p>
-
-  <p class="command untyped" style="border: none;"></p>
-
-</body>
-
+    <p class="command untyped" style="border: none"></p>
+  </body>
 </html>
