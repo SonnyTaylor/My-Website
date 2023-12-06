@@ -1,68 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Meta tags for character set, rendering mode, and title -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Sonny Taylor</title>
 
-<head>
-  <!-- Meta tags for character set, rendering mode, and title -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Sonny Taylor</title>
+    <!-- Meta tags for description and viewport settings -->
+    <meta
+      name="description"
+      content="Explore Sonny Taylor's Terminal Portfolio"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Meta tags for description and viewport settings -->
-  <meta name="description" content="Explore Sonny Taylor's Terminal Portfolio" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Open Graph Protocol Metadata for social media sharing -->
+    <meta property="og:title" content="Sonny Taylor - Terminal Portfolio" />
+    <meta
+      property="og:description"
+      content="Explore Sonny Taylor's Terminal Portfolio"
+    />
+    <meta property="og:image" content="assets/img/thumbnail.png" />
+    <meta property="og:url" content="https://sonnytaylor.uk" />
+    <meta property="og:type" content="website" />
 
-  <!-- Open Graph Protocol Metadata for social media sharing -->
-  <meta property="og:title" content="Sonny Taylor - Terminal Portfolio" />
-  <meta property="og:description" content="Explore Sonny Taylor's Terminal Portfolio" />
-  <meta property="og:image" content="assets/img/thumbnail.png" />
-  <meta property="og:url" content="https://sonnytaylor.uk" />
-  <meta property="og:type" content="website" />
+    <!-- Link to external style sheets and favicon -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/fonts/font.css" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
-  <!-- Link to external style sheets and favicon -->
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="/fonts/font.css" />
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Defer loading of JavaScript for improved page loading performance -->
+    <script defer src="script.js"></script>
+  </head>
 
-  <!-- Defer loading of JavaScript for improved page loading performance -->
-  <script defer src="script.js"></script>
-</head>
+  <body>
+    <!-- Command and answer sections -->
+    <section>
+      <p class="command" style="padding-top: 6px">whoami</p>
+      <p class="answer" style="color: rgb(128, 204, 230)">Sonny Taylor</p>
+    </section>
 
-<body>
-  <!-- Command and answer sections -->
-  <section>
-    <p class="command" style="padding-top: 6px">whoami</p>
-    <p class="answer" style="color: rgb(128, 204, 230)">Sonny Taylor</p>
-  </section>
+    <section>
+      <p class="command">ls</p>
+      <p class="answer">about_me.txt skills.txt contact_info.txt</p>
+    </section>
 
-  <section>
-    <p class="command">ls</p>
-    <p class="answer">about_me.txt skills.txt contact_info.txt</p>
-  </section>
+    <section>
+      <p class="command">cat about_me.txt</p>
+      <p class="answer">
+        My name is <span style="color: rgb(128, 204, 230)">Sonny Taylor</span>.
+        I am a passionate amateur web developer with knowledge in various
+        technologies.
+      </p>
+    </section>
 
-  <section>
-    <p class="command">cat about_me.txt</p>
-    <p class="answer">
-      My name is <span style="color: rgb(128, 204, 230)">Sonny Taylor</span>.
-      I am a passionate amateur web developer with knowledge in various
-      technologies.
-    </p>
-  </section>
+    <section>
+      <p class="command">cat skills.txt</p>
+      <p class="answer">
+        Python, HTML, CSS, JavaScript, Linux, TailwindCSS, and AWS
+      </p>
+    </section>
 
-  <section>
-    <p class="command">cat skills.txt</p>
-    <p class="answer">Python, HTML, CSS, JavaScript, Linux, TailwindCSS, and AWS</p>
-  </section>
+    <section>
+      <p class="command">cat contact_info.txt</p>
+      <p class="answer">
+        Email: santinotaylor08@gmail.com<br />Discord: .salaminipples
+      </p>
+    </section>
 
-  <section>
-    <p class="command">cat contact_info.txt</p>
-    <p class="answer">
-      Email: santinotaylor08@gmail.com<br />Discord: .salaminipples
-    </p>
-  </section>
+    <section>
+      <p class="command">cat CatFact.txt</p>
+      <p class="answer" id="cat-fact"></p>
+    </section>
 
-  <section>
-    <p class="command untyped" style="border: none"></p>
-  </section>
-</body>
+    <section>
+      <p class="command untyped" style="border: none"></p>
+    </section>
 
+    <script>
+      fetch("https://catfact.ninja/fact")
+        .then((response) => response.json())
+        .then((data) => {
+          document.getElementById("cat-fact").textContent = data.fact;
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    </script>
+  </body>
 </html>
