@@ -85,6 +85,16 @@
         .catch((error) => {
           console.error("Error:", error);
         });
+
+      // BEGIN: Change tab name based on user's focus
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "hidden") {
+          document.title = "Come back";
+        } else {
+          document.title = "Sonny Taylor";
+        }
+      });
+      // END: Change tab name based on user's focus
     </script>
   </body>
 </html>
