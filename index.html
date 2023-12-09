@@ -84,6 +84,8 @@
         })
         .catch((error) => {
           console.error("Error:", error);
+          document.getElementById("cat-fact").innerHTML =
+            "Error: Failed to fetch cat fact";
         });
 
       // BEGIN: Change tab name based on user's focus
