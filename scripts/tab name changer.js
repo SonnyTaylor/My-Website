@@ -1,14 +1,18 @@
+// Event listener for visibility change
 document.addEventListener("visibilitychange", function () {
   if (document.visibilityState === "hidden") {
+    // Set a timeout to change the document title after 2 seconds
     setTimeout(function () {
       document.title = "Come back 😢";
-    }, 1000); // Delay of 2000 milliseconds (2 seconds)
+    }, 2000);
   } else {
+    // Set a timeout to change the document title after 1 second
     setTimeout(function () {
       document.title = "Thank you for coming back! 😊";
+      // Set another timeout to change the document title back to the original after 2 seconds
       setTimeout(function () {
         document.title = "Sonny Taylor";
-      }, 2000); // Delay of 2000 milliseconds (2 seconds)
-    }, 1000); // Delay of 1000 milliseconds (1 second)
+      }, 2000);
+    }, 1000);
   }
 });
