@@ -26,6 +26,10 @@ fetch("https://catfact.ninja/fact")
       "Error: Failed to fetch cat fact";
   });
 
+/**
+ * Fetches a new cat fact from the API, stores it in local storage, and displays it on the webpage.
+ * If the fetched fact has been shown before, it fetches another new fact.
+ */
 function fetchNewCatFact() {
   fetch("https://catfact.ninja/fact")
     .then((response) => response.json())
