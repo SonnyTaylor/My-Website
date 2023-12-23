@@ -26,6 +26,8 @@
     <!-- Link to external style sheets and favicon -->
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <script src="scripts/Cat Facts.js" async defer></script>
+    <script src="scripts/tab name changer.js" async defer></script>
   </head>
 
   <body>
@@ -71,79 +73,5 @@
     <section>
       <p class="command untyped" style="border: none"></p>
     </section>
-
-    <script>
-      fetch("https://catfact.ninja/fact")
-        .then((response) => response.json())
-        .then((data) => {
-          const catFact = data.fact;
-          const storedFacts = localStorage.getItem("catFacts");
-          let storedFactsArray = [];
-
-          if (storedFacts) {
-            storedFactsArray = JSON.parse(storedFacts);
-          }
-
-          if (storedFactsArray.includes(catFact)) {
-            // If the fact has already been shown, fetch a new one
-            console.log("Fact already shown (${catFact})");
-            fetchNewCatFact();
-          } else {
-            // Store the new fact in local storage and display it
-            storedFactsArray.push(catFact);
-            localStorage.setItem("catFacts", JSON.stringify(storedFactsArray));
-            document.getElementById("cat-fact").textContent = catFact;
-          }
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-          document.getElementById("cat-fact").innerHTML =
-            "Error: Failed to fetch cat fact";
-        });
-
-      function fetchNewCatFact() {
-        fetch("https://catfact.ninja/fact")
-          .then((response) => response.json())
-          .then((data) => {
-            const catFact = data.fact;
-            const storedFacts = localStorage.getItem("catFacts");
-            let storedFactsArray = [];
-
-            if (storedFacts) {
-              storedFactsArray = JSON.parse(storedFacts);
-            }
-
-            if (storedFactsArray.includes(catFact)) {
-              // If the new fact has also been shown before, fetch another new one
-              fetchNewCatFact();
-            } else {
-              // Store the new fact in local storage and display it
-              storedFactsArray.push(catFact);
-              localStorage.setItem(
-                "catFacts",
-                JSON.stringify(storedFactsArray)
-              );
-              document.getElementById("cat-fact").textContent = catFact;
-            }
-          })
-          .catch((error) => {
-            console.error("Error:", error);
-            document.getElementById("cat-fact").innerHTML =
-              "Error: Failed to fetch cat fact";
-          });
-      }
-
-      // BEGIN: Change tab name based on user's focus
-      document.addEventListener("visibilitychange", function () {
-        if (document.visibilityState === "hidden") {
-          setTimeout(function () {
-            document.title = "Come back 😢";
-          }, 1000); // Delay of 2000 milliseconds (2 seconds)
-        } else {
-          document.title = "Sonny Taylor";
-        }
-      });
-      // END: Change tab name based on user's focus
-    </script>
   </body>
 </html>
