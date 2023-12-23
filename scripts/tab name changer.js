@@ -8,7 +8,7 @@ document.addEventListener("visibilitychange", function () {
   } else {
     // Set a timeout to change the document title after 1 second
     setTimeout(function () {
-      document.title = "Thank you for coming back! 😊";
+      document.title = "Thanks for coming back! 😊";
       // Set another timeout to change the document title back to the original after 2 seconds
       setTimeout(function () {
         document.title = "Sonny Taylor";
