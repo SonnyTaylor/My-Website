@@ -1,44 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 Not Found</title>
+    <style>
+      /* Add some basic styling to make your 404 page visually appealing */
+      body {
+        font-family: "Arial", sans-serif;
+        text-align: center;
+        padding: 50px;
+        background-color: #f4f4f4;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404 Not Found</title>
-  <style>
-    /* Add some basic styling to make your 404 page visually appealing */
-    body {
-      font-family: "Arial", sans-serif;
-      text-align: center;
-      padding: 50px;
-      background-color: #f4f4f4;
-    }
+      h1 {
+        color: #333;
+      }
 
-    h1 {
-      color: #333;
-    }
+      .error-message {
+        margin-bottom: 20px;
+      }
 
-    .error-message {
-      margin-bottom: 20px;
-    }
+      .error-image {
+        max-width: 100%;
+        /* Set the maximum width to 100% of its container */
+        height: auto;
+        /* Maintain the aspect ratio */
+        margin: 0 auto;
+        /* Center the image */
+      }
+    </style>
+  </head>
 
-    .error-image {
-      max-width: 100%;
-      /* Set the maximum width to 100% of its container */
-      height: auto;
-      /* Maintain the aspect ratio */
-      margin: 0 auto;
-      /* Center the image */
-    }
-  </style>
-</head>
+  <body>
+    <h1 class="error-message">404 Not Found</h1>
+    <p>Sorry, the page you are looking for might be in another castle!</p>
+    <p>
+      Try
+      <a href="https://sonnytaylor.uk" target="_blank">sonnytaylor.uk</a> maybe?
+    </p>
 
-<body>
-  <h1 class="error-message">404 Not Found</h1>
-  <p>Sorry, the page you are looking for might be in another castle!</p>
-  <p>Try <a href="https://sonnytaylor.uk" target="_blank">sonnytaylor.uk</a> maybe?</p>
+    <div id="loading-screen">
+      <div class="loader"></div>
+    </div>
 
-  <img src="https://http.cat/404.jpg" alt="Cat 404" class="error-image" />
-</body>
+    <img
+      src="https://http.cat/404.jpg"
+      alt="Cat 404"
+      class="error-image"
+      onload="hideLoadingScreen()"
+    />
 
+    <style>
+      /* Add some basic styling to make the loading screen visually appealing */
+      #loading-screen {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #f4f4f4;
+        z-index: 9999;
+      }
+
+      .loader {
+        border: 16px solid #f3f3f3;
+        border-top: 16px solid #3498db;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+
+    <script>
+      function hideLoadingScreen() {
+        var loadingScreen = document.getElementById("loading-screen");
+        loadingScreen.style.display = "none";
+      }
+    </script>
+  </body>
 </html>
